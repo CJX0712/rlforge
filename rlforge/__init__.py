@@ -13,6 +13,7 @@ from .td import q_learning, sarsa, expected_sarsa
 from .deep import MLP, dqn, greedy_return
 from .pg import reinforce, a2c, ppo, lqr_actor_critic
 from .fusion import rlfuse, simulate_greedy
+from .benchmarks import run_benchmarks, BenchRow
 
 __version__ = "0.1.0"
 __author__ = "晨星"
@@ -25,4 +26,5 @@ __all__ = [
     "MLP", "dqn", "greedy_return",
     "reinforce", "a2c", "ppo", "lqr_actor_critic",
     "rlfuse", "simulate_greedy",
+    "run_benchmarks", "BenchRow",
 ]

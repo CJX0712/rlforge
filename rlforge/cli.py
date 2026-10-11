@@ -6,21 +6,11 @@ from .envs import GridWorld, CliffWalking
 from .dp import value_iteration
 from .fusion import rlfuse, simulate_greedy
 from .gates import run_gates
+from .benchmarks import run_benchmarks
 
 
 def _bench():
-    print("RlForge · bench\n")
-    for name, env in [("GridWorld", GridWorld()), ("CliffWalking", CliffWalking())]:
-        mdp = env.tabular()
-        V, pi = value_iteration(mdp)
-        opt = simulate_greedy(mdp, pi)
-        rep = rlfuse(mdp, seed=0)
-        print(f"== {name} ==")
-        print(f"  optimal (value iteration) return : {opt:.3f}")
-        for m, r in rep["returns"].items():
-            tag = "  <-- selected" if m == rep["selected"] else ""
-            print(f"  {m:<16} return : {r:.3f}{tag}")
-        print(f"  selected: {rep['selected']}  gain over runner-up: {rep['gain']:+.3f}\n")
+    run_benchmarks(verbose=True)
     return 0
 
 
