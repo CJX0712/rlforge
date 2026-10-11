@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# WorkBuddy project memory (not part of the deliverable)
+.workbuddy/
+
+# misc
+.DS_Store
+*.swp

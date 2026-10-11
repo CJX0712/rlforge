@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rlforge"
+version = "0.1.0"
+description = "World-class reinforcement learning system: DP / TD / DQN / PPO, pure NumPy, deterministic, verifiable. Author 晨星"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "晨星", email = "morningstar@users.noreply.github.com" }]
+keywords = ["reinforcement-learning", "rl", "dqn", "ppo", "value-iteration", "numpy", "deterministic"]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+rlforge = "rlforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["rlforge*"]
